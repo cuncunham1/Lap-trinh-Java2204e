@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <pre>
+        ví dụ tính tổng các số từ 1 đến 10
+        sum = 1+2+3+...+10
+        dùng document.write() hay alert() để in ra kết quả 
+    </pre>
+    <div>
+        <label>Nhập N :</label>
+        <input type="text" name="n" id="n" value="1">
+    </div>
+    <div>
+        <label>Nhập M :</label>
+        <input type="text" name="m" id="m" value="100">
+    </div>
+
+    <div>
+        <button id="calc-sum">Tính tổng các số từ N đến M</button>
+        <button id="calc-mul">Tính tích các số từ N đến M</button>
+        <button id="calc-sum-2">Tính tổng các số chẵn từ N đến M</button>
+    </div>
+    <div id="tong"></div>
+    <div id="tich"></div>
+    <div id="tongchan"></div>
+
+
+    <script>
+        document.getElementById("calc-sum").onclick=function(){
+            var n=document.getElementById("n").value;
+            n=parseInt(n);
+            var m=document.getElementById("m").value;
+            m=parseInt(m);
+
+            alert("Tổng các số từ " +n+" đến "+m+" là :" );
+            var kq=0;
+            for(var i=n;i<=m;i++){
+                kq=kq+i;
+            }
+            document.getElementById("tong").innerHTML="Tổng= "+kq;
+        }
+
+        document.getElementById("calc-mul").onclick=function(){
+            var n=document.getElementById("n").value;
+            n=parseInt(n);
+            var m=document.getElementById("m").value;
+            m=parseInt(m);
+
+            alert("Tích các số từ " +n+" đến "+m+" là :" );
+            var kq=1;
+            for(var i=n;i<=m;i++){
+                kq=kq*i;
+            }
+            document.getElementById("tich").innerHTML="Tích= "+kq;
+        }
+
+        document.getElementById("calc-sum-2").onclick=function(){
+            var n=document.getElementById("n").value;
+            n=parseInt(n);
+            var m=document.getElementById("m").value;
+            m=parseInt(m);
+
+            alert("Tổng các số chẵn từ " +n+" đến "+m+" là :" );
+            var kq=0;
+            for(var i=n;i<=m;i++){
+                if(i%2==0){
+                    kq=kq+i;
+                }
+            }
+            document.getElementById("tongchan").innerHTML="Tổng= "+kq;
+        }
+    </script>
+</body>
+</html>
